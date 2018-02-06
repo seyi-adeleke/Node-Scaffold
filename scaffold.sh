@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$1" != "" ]; then
+    mkdir ${1}
+    cd ${1}
+    npm init -y
+    arguments=($@)
+    for (( package=1; package<$#; package++ )); do
+        npm i ${arguments[package]} -S
+    done
+    touch index.js
+    git init
+    echo "Done 🔥"
+else
+    echo "Please supply a name for your project"
+    exit 64
+fi
