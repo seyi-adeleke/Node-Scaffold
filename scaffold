@@ -9,8 +9,10 @@ if [ "$1" != "" ]; then
         npm i ${arguments[package]} -S
     done
     touch index.js
+    mkdir server client tests 
     git init
     echo "Done 🔥"
+    exit 0
 else
     echo "Please supply a name for your project"
     exit 64
